@@ -29,3 +29,10 @@ https://github.com/ray-chunkit-chung/freeecommercewebsite
 2. In VSCode, right click Dockerfile > build image >> Name your image: ${dockerhub_id}/${image_name}
 3. In VSCode, right click the image > Push >> Enter ${dockerhub_id}
 4. Create new app service in azure to pull from your dockerhub
+
+
+## Backend
+
+### Dockerize backend
+
+
