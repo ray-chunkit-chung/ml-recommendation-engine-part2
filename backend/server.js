@@ -27,8 +27,13 @@ app.get("/api/message", (req, res) => {
 // API route to fetch product data from the external API
 app.get('/api/products', async (req, res) => {
     try {
+        // Call the external API to get the product data
         const response = await axios.get(externalApiUrl);
+
+        // Slice the response to only include the first 12 products
         const products = response.data.slice(0, 12);
+        
+        // return the products as JSON
         res.json(products);
     } catch (error) {
         console.error(error);
