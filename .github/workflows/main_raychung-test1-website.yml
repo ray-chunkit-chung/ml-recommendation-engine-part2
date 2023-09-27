@@ -48,4 +48,4 @@ jobs:
         app-name: 'raychung-test1-website'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_7e662976bad948ef96a3e6f879e79eea }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_33fd100e23c14a89a4d7fbe03659ecaa }}/raychung/ecommerce-website:${{ github.sha }}'
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_33fd100e23c14a89a4d7fbe03659ecaa }}/ecommerce-website:${{ github.sha }}'
