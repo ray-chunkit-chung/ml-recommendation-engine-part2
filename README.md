@@ -99,6 +99,17 @@ Products in the following div are personalized for each user
 
 ```bash
 npx express-generator backend --view ejs
+cd backend
+npm install express cors axios webpack dotenv
+npm install nodemon --save-dev
 ```
 
+Remove most of the template code and add server.js
+
 ### Dockerize backend
+
+<https://medium.com/bb-tutorials-and-thoughts/how-to-build-and-deploy-mern-stack-on-azure-container-instances-1fea781d2002>
+
+<https://medium.com/bb-tutorials-and-thoughts/how-to-build-mern-stack-for-production-1462e70a35cb>
+
+<https://github.com/bbachi/mern-stack-example/tree/main>
