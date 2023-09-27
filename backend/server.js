@@ -28,7 +28,7 @@ app.get("/api/message", (req, res) => {
 app.get('/api/products', async (req, res) => {
     try {
         const response = await axios.get(externalApiUrl);
-        const products = response.data;
+        const products = response.data.slice(0, 12);
         res.json(products);
     } catch (error) {
         console.error(error);
