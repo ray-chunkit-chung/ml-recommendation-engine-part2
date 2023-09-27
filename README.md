@@ -29,7 +29,7 @@ Copy frontend folder from this repo to your frontend folder
 3. In VSCode, right click the image > Push >> Enter ${dockerhub_id}
 4. Create new app service in azure to pull from your dockerhub
 
-## Backend
+### Personalized content
 
 Products in the following div are personalized for each user
 
@@ -93,6 +93,12 @@ Products in the following div are personalized for each user
     </div>
 ...
 </div>
+```
+
+## Backend
+
+```bash
+npx express-generator backend --view ejs
 ```
 
 ### Dockerize backend
