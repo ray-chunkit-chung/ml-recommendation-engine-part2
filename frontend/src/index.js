@@ -14,7 +14,8 @@ root.render(
 
 //The service worker is a web API that helps you cache your assets and other
 // files so that when the user is offline or on slow network, he/she can still
-// see results on the screen
+// see results on the screen. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
 registerServiceWorker();
 
 // If you want to start measuring performance in your app, pass a function

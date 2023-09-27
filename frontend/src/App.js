@@ -1,4 +1,20 @@
+import React, { useState, useEffect } from 'react';
+
 function App() {
+    const [message, setMessage] = useState("");
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+        fetch("/api/message")
+            .then((res) => res.json())
+            .then((data) => setMessage(data.message));
+    }, []);
+    useEffect(() => {
+        fetch("/api/products")
+            .then((res) => res.json())
+            .then((data) => setProducts(data))
+            .catch((error) => console.error(error));
+    }, []);
+
     return (
         <div className="App">
             <header>
@@ -639,14 +655,7 @@ function App() {
 
             </header>
 
-
-
-
-
-
-
             <main>
-
 
                 <div class="banner">
 
@@ -1868,7 +1877,15 @@ function App() {
 
                 </div>
 
-
+                <div class="product-container">
+                    <p>test test test test test test</p>
+                    <p>{message}</p>
+                    <ul>
+                        {products.map((product) => (
+                            <li key={product.userId}>{product.title}</li>
+                        ))}
+                    </ul>
+                </div>
 
                 <div class="blog">
 
@@ -1974,11 +1991,6 @@ function App() {
                 </div>
 
             </main>
-
-
-
-
-
 
             <footer>
 
