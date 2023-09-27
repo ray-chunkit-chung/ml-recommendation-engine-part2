@@ -17,7 +17,12 @@ const PORT = process.env.PORT || 3080;
 app.use(cors());
 
 // Define the URL of the external API (JSONPlaceholder)
-const externalApiUrl = 'https://jsonplaceholder.typicode.com/todos';
+// const externalApiUrl = 'https://jsonplaceholder.typicode.com/todos';
+const externalApiUrl = 'https://raychung-test1-model.azurewebsites.net/predict';
+const userIds = [1111];
+const movieIds = [1,3,4,6,8,10];
+
+
 
 // Test route
 app.get("/api/message", (req, res) => {
@@ -28,10 +33,9 @@ app.get("/api/message", (req, res) => {
 app.get('/api/products', async (req, res) => {
     try {
         // Call the external API to get the product data
-        const response = await axios.get(externalApiUrl);
-
-        // Slice the response to only include the first 12 products
-        const products = response.data.slice(0, 12);
+        // const response = await axios.get(externalApiUrl);
+        const response = await axios.post(externalApiUrl, {UserIds: userIds, MovieIds: movieIds});
+        const products = response.data.predictions;
         
         // return the products as JSON
         res.json(products);

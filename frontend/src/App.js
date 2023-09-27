@@ -1279,7 +1279,7 @@ function App() {
                                                 <a href="#" class="showcase-category">User: {product.userId}/Product: {product.id}</a>
 
                                                 <a href="#">
-                                                    <h3 class="showcase-title">{product.title}</h3>
+                                                    <h3 class="showcase-title">{product.score}</h3>
                                                 </a>
 
                                                 <div class="showcase-rating">
