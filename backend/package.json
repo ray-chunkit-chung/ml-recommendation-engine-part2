@@ -4,7 +4,10 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon server.js"
+    "dev": "nodemon -L ./server.js localhost 3080",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ENVIRONMENT=$ENVIRONMENT webpack",
+    "prod-build": "ENVIRONMENT='production' gulp"
   },
   "dependencies": {
     "axios": "^1.5.1",
@@ -14,9 +17,13 @@
     "dotenv": "^16.3.1",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
+    "gulp": "^4.0.2",
+    "gulp-zip": "^5.1.0",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "webpack": "^5.88.2"
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-stream": "^7.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"

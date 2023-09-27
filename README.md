@@ -25,8 +25,8 @@ Copy frontend folder from this repo to your frontend folder
 ### Dockerize frontend
 
 1. Build dockerfile to your dockerhub account
-2. In VSCode, right click Dockerfile > build image >> Name your image: ${dockerhub_id}/${image_name}
-3. In VSCode, right click the image > Push >> Enter ${dockerhub_id}
+2. In VSCode, right click Dockerfile > build image >> Name your image: ${DOCKERHUB_ID}/${image_name}
+3. In VSCode, right click the image > Push >> Enter ${DOCKERHUB_ID}
 4. Create new app service in azure to pull from your dockerhub
 
 ### Personalized content
@@ -100,11 +100,14 @@ Products in the following div are personalized for each user
 ```bash
 npx express-generator backend --view ejs
 cd backend
-npm install express cors axios webpack dotenv
+npm install express cors axios dotenv webpack webpack-cli webpack-stream gulp gulp-zip
 npm install nodemon --save-dev
 ```
 
-Remove most of the template code and add server.js
+Remove most of the template code and add the following files
+
+- server.js
+- webpack.config.js
 
 ### Dockerize backend
 
@@ -113,3 +116,10 @@ Remove most of the template code and add server.js
 <https://medium.com/bb-tutorials-and-thoughts/how-to-build-mern-stack-for-production-1462e70a35cb>
 
 <https://github.com/bbachi/mern-stack-example/tree/main>
+
+```bash
+source .env
+docker build -t ${DOCKERHUB_ID}/ecommerce-website:latest .
+docker run -d -p 3080:80 --name website raychung/ecommerce-website:latest
+docker push ${DOCKERHUB_ID}/ecommerce-website:latest 
+```
