@@ -1880,11 +1880,11 @@ function App() {
                 <div class="product-container">
                     <p>test test test test test test</p>
                     <p>{message}</p>
-                    <ul>
+                    {/* <ul>
                         {products.map((product) => (
                             <li key={product.userId}>{product.title}</li>
                         ))}
-                    </ul>
+                    </ul> */}
                 </div>
 
                 <div class="blog">

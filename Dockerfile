@@ -9,14 +9,12 @@ FROM node:20-slim AS backend-build
 WORKDIR /usr/src
 COPY backend/ ./backend/
 RUN cd backend && npm install && ENVIRONMENT=production npm run build
-RUN ls
 
 # Stage3: Packaging the app
 FROM node:20-slim
 WORKDIR /root/
 COPY --from=frontend-build /usr/src/frontend/build ./frontend/build
 COPY --from=backend-build /usr/src/backend/build .
-RUN ls
 
 EXPOSE 80
 
