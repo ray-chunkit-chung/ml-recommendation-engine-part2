@@ -1235,7 +1235,7 @@ function App() {
 
                             <div class="product-main">
 
-                                <h2 class="title">New Products</h2>
+                                <h2 class="title">おすすめProducts</h2>
 
                                 <div class="product-grid">
 
@@ -1279,7 +1279,7 @@ function App() {
                                                 <a href="#" class="showcase-category">User: {product.userId}/Product: {product.id}</a>
 
                                                 <a href="#">
-                                                    <h3 class="showcase-title">{product.score}</h3>
+                                                    <h3 class="showcase-title">おすすめスコア{product.score}</h3>
                                                 </a>
 
                                                 <div class="showcase-rating">

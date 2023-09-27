@@ -6,7 +6,7 @@ const path = require('path');
 console.log('environment    ', process.env.ENVIRONMENT)
 console.log('PORT    ', process.env.PORT)
 console.log('MONGO_CONNECTION_STRING    ', process.env.MONGO_CONNECTION_STRING)
-if(process.env.ENVIRONMENT !== 'production') {
+if (process.env.ENVIRONMENT !== 'production') {
     require('dotenv').config()
 }
 
@@ -20,7 +20,9 @@ app.use(cors());
 // const externalApiUrl = 'https://jsonplaceholder.typicode.com/todos';
 const externalApiUrl = 'https://raychung-test1-model.azurewebsites.net/predict';
 const userIds = [1111];
-const movieIds = [1,3,4,6,8,10];
+const movieIds1 = [1, 6, 8, 10];
+const movieIds2 = Array.from({ length: 30 }, () => Math.floor(Math.random() * 3000)); // 30 random movie ids between 0 and 3000
+const movieIds = movieIds1.concat(movieIds2);
 
 
 
@@ -34,9 +36,9 @@ app.get('/api/products', async (req, res) => {
     try {
         // Call the external API to get the product data
         // const response = await axios.get(externalApiUrl);
-        const response = await axios.post(externalApiUrl, {UserIds: userIds, MovieIds: movieIds});
+        const response = await axios.post(externalApiUrl, { UserIds: userIds, MovieIds: movieIds });
         const products = response.data.predictions;
-        
+
         // return the products as JSON
         res.json(products);
     } catch (error) {
