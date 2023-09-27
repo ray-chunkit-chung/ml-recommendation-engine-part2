@@ -34,5 +34,3 @@ https://github.com/ray-chunkit-chung/freeecommercewebsite
 ## Backend
 
 ### Dockerize backend
-
-
